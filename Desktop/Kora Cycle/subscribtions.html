@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora Cycle Subscriptions & Pricing</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configure Tailwind to use Poppins font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'kora-pink-light': '#fff5f8', // Light background start color
+                        'kora-pink-deep': '#fde6ec',  // Light background end color
+                        'kora-coral': '#ff6b6b',      // Primary CTA pink/coral
+                        'kora-text': '#333333',       // Dark text
+                        'kora-premium': '#4A90E2',    // Blue accent for Premium highlight
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(255, 107, 107, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom Gradient and Animation Styles -->
+    <style>
+        /* Apply the soft pink gradient background */
+        body {
+            background: linear-gradient(180deg, var(--tw-colors-kora-pink-light) 0%, var(--tw-colors-kora-pink-deep) 100%);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Styles for the fade-in animation on scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-kora-text">
+
+    <!-- === NAVIGATION BAR === -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 fade-in-up">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-3xl font-extrabold text-kora-coral">
+                        Kora Cycle
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
+                    <a href="product.html" class="text-gray-700 hover:text-kora-coral transition duration-300">Product</a>
+                    <a href="healthlibrary.html" class="text-gray-700 hover:text-kora-coral transition duration-300">Health Library</a>
+                    <a href="calculator.html" class="text-gray-700 hover:text-kora-coral transition duration-300">Calculators</a>
+                    <a href="about.html" class="text-gray-700 hover:text-kora-coral transition duration-300">About</a>
+                    <a href="forclinicians.html" class="text-gray-700 hover:text-kora-coral transition duration-300">For Clinicians</a>
+                    <a href="subscribtions.html" class="text-kora-coral font-bold transition duration-300">Manage Subscription</a>
+                </div>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <button class="bg-kora-coral text-white px-5 py-2.5 rounded-full font-bold shadow-lg hover:bg-red-500 transition duration-300">
+                        Try Kora Cycle Today
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-kora-text p-2 rounded-md">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="product.html" class="text-gray-700 hover:text-kora-coral px-3 py-2 rounded-md font-medium">Product</a>
+                    <a href="healthlibrary.html" class="text-gray-700 hover:text-kora-coral px-3 py-2 rounded-md font-medium">Health Library</a>
+                    <a href="calculator.html" class="text-gray-700 hover:text-kora-coral px-3 py-2 rounded-md font-medium">Calculators</a>
+                    <a href="about.html" class="text-gray-700 hover:text-kora-coral px-3 py-2 rounded-md font-medium">About</a>
+                    <a href="forclinicians.html" class="text-gray-700 hover:text-kora-coral px-3 py-2 rounded-md font-medium">For Clinicians</a>
+                    <a href="subscribtions.html" class="text-kora-coral bg-kora-pink-light px-3 py-2 rounded-md font-bold">Manage Subscription</a>
+                    <button class="w-full bg-kora-coral text-white mt-4 px-5 py-3 rounded-full font-bold shadow-lg hover:bg-red-500 transition duration-300">
+                        Try Kora Cycle Today
+                    </button>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <!-- === SUBSCRIPTION HEADER SECTION === -->
+    <section class="py-16 bg-white border-b border-kora-pink-deep fade-in-up" style="transition-delay: 100ms;">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-kora-coral mb-4">
+                Choose Your Personalized Health Plan
+            </h1>
+            <p class="text-xl text-gray-600">
+                Unlock deeper insights, advanced predictions, and an ad-free experience with Kora Cycle Premium.
+            </p>
+        </div>
+    </section>
+
+    <!-- === PRICING GRID SECTION === -->
+    <section class="py-20 lg:py-32 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Plan 1: Basic (Free) -->
+            <div class="bg-white p-8 rounded-3xl shadow-2xl shadow-gray-400/10 flex flex-col fade-in-up" style="transition-delay: 200ms;">
+                <h3 class="text-2xl font-bold text-kora-text mb-2">Basic</h3>
+                <p class="text-gray-600 mb-6">The essential tools for every user.</p>
+                <div class="text-center mb-8">
+                    <p class="text-5xl font-extrabold text-kora-text">Free</p>
+                    <p class="text-sm text-gray-500">Always</p>
+                </div>
+                
+                <ul class="space-y-4 text-gray-700 flex-grow">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Cycle & Period Tracking
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Symptom & Mood Logging
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Health Library Access
+                    </li>
+                    <li class="flex items-center text-gray-400">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        Ovulation Confirmation
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <button class="w-full px-6 py-3 border border-kora-text text-kora-text font-bold text-lg rounded-xl hover:bg-gray-100 transition duration-300 shadow-md">
+                        Current Plan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Plan 2: Premium Yearly (Highlighted) -->
+            <div class="relative bg-white p-8 rounded-3xl shadow-2xl shadow-kora-coral/50 flex flex-col border-4 border-kora-coral fade-in-up" style="transition-delay: 300ms;">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-kora-coral text-white text-xs font-bold uppercase rounded-full shadow-md">
+                    Best Value
+                </div>
+                <h3 class="text-2xl font-bold text-kora-text mb-2">Premium Yearly</h3>
+                <p class="text-gray-600 mb-6">Commit for the biggest savings and maximum benefits.</p>
+                <div class="text-center mb-8">
+                    <p class="text-5xl font-extrabold text-kora-coral">$49</p>
+                    <p class="text-sm text-gray-500">billed annually (save 30%)</p>
+                </div>
+                
+                <ul class="space-y-4 text-gray-700 flex-grow">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        **EVERYTHING in Basic**
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Advanced Ovulation Confirmation
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Full AI Health Assistant Access
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Clinical Report Generation
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Completely Ad-Free
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <button class="w-full px-6 py-3 bg-kora-coral text-white font-bold text-lg rounded-xl shadow-lg hover:bg-red-500 transition duration-300">
+                        Upgrade Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Plan 3: Premium Monthly -->
+            <div class="bg-white p-8 rounded-3xl shadow-2xl shadow-gray-400/10 flex flex-col fade-in-up" style="transition-delay: 400ms;">
+                <h3 class="text-2xl font-bold text-kora-text mb-2">Premium Monthly</h3>
+                <p class="text-gray-600 mb-6">Flexibility with full access to all features.</p>
+                <div class="text-center mb-8">
+                    <p class="text-5xl font-extrabold text-kora-text">$5.99</p>
+                    <p class="text-sm text-gray-500">billed monthly</p>
+                </div>
+                
+                <ul class="space-y-4 text-gray-700 flex-grow">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        **EVERYTHING in Basic**
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Advanced Ovulation Confirmation
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Full AI Health Assistant Access
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Clinical Report Generation
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-kora-coral" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Completely Ad-Free
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <button class="w-full px-6 py-3 border border-kora-coral text-kora-coral font-bold text-lg rounded-xl hover:bg-kora-pink-light transition duration-300 shadow-md">
+                        Upgrade Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- === CURRENT SUBSCRIPTION STATUS SECTION === -->
+    <section class="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto p-8 bg-white rounded-3xl shadow-2xl shadow-kora-coral/20 fade-in-up" style="transition-delay: 500ms;">
+            <h2 class="text-3xl font-extrabold text-kora-text mb-6 border-b pb-4">
+                Your Current Plan Status
+            </h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Status Row -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-kora-pink-light p-4 rounded-xl">
+                    <p class="text-xl font-semibold text-gray-700 mb-2 sm:mb-0">Plan:</p>
+                    <p class="text-2xl font-extrabold text-kora-text">Basic (Free Tier)</p>
+                </div>
+                
+                <!-- Billing Row (Mockup for Premium users) -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 rounded-xl border-b pb-4">
+                    <p class="text-xl font-semibold text-gray-700 mb-2 sm:mb-0">Next Billing Date:</p>
+                    <p class="text-xl font-extrabold text-gray-500 italic">Not applicable (Free)</p>
+                </div>
+
+                <!-- Action Button -->
+                <div class="pt-4 text-center">
+                    <button class="px-8 py-3 bg-kora-text text-white font-bold text-lg rounded-full shadow-lg hover:bg-gray-700 transition duration-300">
+                        View Billing History
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER SECTION (Re-used for consistency) === -->
+    <footer class="bg-kora-pink-deep pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 border-b pb-10 border-gray-300">
+                <!-- Brand Info -->
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-2xl font-extrabold text-kora-coral mb-4">Kora Cycle</h4>
+                    <p class="text-gray-600 text-sm">Empowering women with health insights.</p>
+                </div>
+                
+                <!-- Company Links -->
+                <div>
+                    <h5 class="text-kora-text font-bold mb-4">Company</h5>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="kora_about_page.html" class="hover:text-kora-coral">About Us</a></li>
+                        <li><a href="#" class="hover:text-kora-coral">Careers</a></li>
+                        <li><a href="#" class="hover:text-kora-coral">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div>
+                    <h5 class="text-kora-text font-bold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-kora-coral">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-kora-coral">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-kora-coral">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Links -->
+                <div>
+                    <h5 class="text-kora-text font-bold mb-4">Support</h5>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-kora-coral">Help Center</a></li>
+                        <li><a href="kora_for_clinicians.html" class="hover:text-kora-coral">For Clinicians</a></li>
+                        <li><a href="kora_calculator_page.html" class="hover:text-kora-coral">Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="col-span-2 md:col-span-1">
+                    <h5 class="text-kora-text font-bold mb-4">Connect</h5>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a href="#" class="text-gray-600 hover:text-kora-coral"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.01 3.657 9.177 8.438 9.9V14.25H7.5V12h2.938v-2.14c0-2.883 1.76-4.47 4.347-4.47 1.243 0 2.31.22 2.624.31v3.01H15.42c-1.42 0-1.7 1.29-1.7 2.05v2.79h3.764l-.6 3.75h-3.164V21.9A10.01 10.01 0 0022 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+                        <!-- Twitter -->
+                        <a href="#" class="text-gray-600 hover:text-kora-coral"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 4.026c-.724.322-1.503.537-2.327.636.837-.5 1.47-1.29 1.776-2.235-.785.466-1.654.805-2.583.987-.743-.79-1.8-1.285-2.986-1.285-2.25 0-4.085 1.835-4.085 4.085 0 .32.036.63.1.928-3.4-.17-6.425-1.795-8.448-4.26-.35.6-.55 1.295-.55 2.035 0 1.41.718 2.66 1.807 3.39-.66-.02-1.28-.2-1.82-.5v.05c0 1.98 1.41 3.63 3.29 4.0-.34.09-.7.13-1.07.13-.26 0-.52-.02-.77-.07.52 1.63 2.03 2.81 3.8 2.85-1.407 1.1-3.18 1.76-5.11 1.76-.33 0-.66-.02-.98-.05 1.82 1.17 3.98 1.85 6.29 1.85 7.55 0 11.66-6.27 11.66-11.66 0-.17 0-.33-.01-.5.8-.57 1.49-1.28 2.04-2.12z"></path></svg></a>
+                        <!-- Instagram -->
+                        <a href="#" class="text-gray-600 hover:text-kora-coral"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.071l.73.042c1.37.065 2.115.297 2.834.582.72.288 1.255.776 1.79 1.31.53.535 1.018 1.07 1.305 1.79.285.72.517 1.465.582 2.834l.042.73c.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85l-.042.73c-.065 1.37-.297 2.115-.582 2.834-.288.72-.776 1.255-1.31 1.79-.535.53-1.07 1.018-1.79 1.305-.72.285-1.465.517-2.834.582l-.73.042c-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071l-.73-.042c-1.37-.065-2.115-.297-2.834-.582-.72-.288-1.255-.776-1.79-1.31-.53-.535-1.018-1.07-1.305-1.79-.285-.72-.517-1.465-.582-2.834l-.042-.73c-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85l.042-.73c.065 1.37.297 2.115.582 2.834.288.72.776 1.255 1.31 1.79.535.53 1.07 1.018 1.79 1.305.72.285 1.465.517 2.834.582l.73.042c1.266.059 1.646.071 4.85.071zM12 4.5c-3.14 0-3.535.01-4.78.069-1.245.06-1.795.275-2.228.452-.435.177-.73.392-1.008.67-.278.278-.493.573-.67.99-.177.43-.392 1.083-.452 2.228-.059 1.245-.069 1.64-.069 4.78s.01 3.535.069 4.78c.06 1.245.275 1.795.452 2.228.177.435.392.73.67 1.008.278.278.573.493.99.67.43.177 1.083.392 2.228.452 1.245.059 1.64.069 4.78.069s3.535-.01 4.78-.069c1.245-.06 1.795-.275 2.228-.452.435-.177.73-.392 1.008-.67.278-.278.493-.573.67-1.008.177-.43.392-1.083.452-2.228.059-1.245.069-1.64.069-4.78s-.01-3.535-.069-4.78c-.06-1.245-.275-1.795-.452-2.228-.177-.435-.392-.73-.67-1.008-.278-.278-.573-.493-.99-.67-.43-.177-1.083-.392-2.228-.452-1.245-.059-1.64-.069-4.78-.069zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zM17.763 5.86a1.164 1.164 0 100 2.328 1.164 1.164 0 000-2.328z"></path></svg></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 pt-4 border-t border-gray-300 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 Kora Cycle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animation & Mobile Menu -->
+    <script>
+        // === Mobile Menu Toggle ===
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle accessible attributes
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // === Scroll Fade-In Animation ===
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Check if the element is visible
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options: rootMargin controls when the intersection is triggered
+            rootMargin: '0px 0px -100px 0px', // Trigger 100px before reaching the bottom of the viewport
+            threshold: 0.1 // 10% of the item must be visible
+        });
+
+        // Get all elements with the animation class and start observing
+        document.querySelectorAll('.fade-in-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
