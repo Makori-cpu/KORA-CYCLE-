@@ -1,0 +1,21 @@
+/* Project-wide custom CSS */
+:root {
+  --kora-pink-light: #fff5f8;
+  --kora-pink-deep: #fde6ec;
+  --kora-coral: #ff6b6b;
+  --kora-text: #333333;
+}
+
+html, body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  color: var(--kora-text);
+  background: linear-gradient(180deg, var(--kora-pink-light) 0%, var(--kora-pink-deep) 100%);
+  min-height: 100vh;
+}
+
+/* Fade-in-up animation used across pages */
+.fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Small utility for rounded shadows used site-wide */
+.shadow-card { box-shadow: 0 10px 30px -5px rgba(255,107,107,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }

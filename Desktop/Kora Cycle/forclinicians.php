@@ -2,19 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kora Cycle for Clinicians</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins', 'sans-serif'], }, colors: { 'kora-pink-light': '#fff5f8', 'kora-pink-deep': '#fde6ec', 'kora-coral': '#ff6b6b', 'kora-text': '#333333', }, boxShadow: { 'card': '0 10px 30px -5px rgba(255, 107, 107, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', } } } };
-    </script>
-    <style>
-        body { background: linear-gradient(180deg, var(--tw-colors-kora-pink-light) 0%, var(--tw-colors-kora-pink-deep) 100%); min-height:100vh; font-family: 'Poppins', sans-serif; }
-        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
-    </style>
+    <?php $page_title = 'For Clinicians — Kora Cycle'; include 'includes/head.php'; ?>
 </head>
 <body class="text-kora-text">
     <?php include 'includes/nav.php'; ?>
@@ -37,9 +25,6 @@
         </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(element => observer.observe(element));
-    </script>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

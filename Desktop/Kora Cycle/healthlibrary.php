@@ -83,55 +83,13 @@
         
         <div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2 fade-in-up">
             
-            <!-- Left: Image -->
-            <div class="h-64 md:h-full bg-gray-200">
-                <img src="Screenshot 2025-11-12 113509.png" alt="Placeholder image for an article on skin health and diet." class="w-full h-full object-cover"/>
-            </div>
-
-            <!-- Right: Content -->
-            <div class="p-8 lg:p-12 flex flex-col justify-center">
-                <p class="text-sm font-semibold text-kora-coral uppercase mb-2">Hormones & Diet</p>
-                <h3 class="text-3xl font-bold text-kora-text mb-4">
-                    Why Sugar Accelerates Skin Aging: The Science of Glycation
-                </h3>
-                <p class="text-gray-600 mb-6">
-                    Excess sugar permanently damages collagen and elastin fibers in your skin through a process called glycation, leading to stiffness, wrinkles, and inflammation.
-                </p>
-                <a href="sugar-skin-aging-article.php" class="text-kora-coral font-bold hover:underline transition duration-200 flex items-center">
-                    Read Full Article
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- === ARTICLES GRID === -->
-    <section class="py-20 lg:pb-32 container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-kora-text mb-8 fade-in-up">Latest Articles</h2>
-        
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Article Card 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 fade-in-up">
-                <img src="https://placehold.co/400x250/ff6b6b/ffffff?text=Tracking+BBT" alt="A thermometer graphic representing basal body temperature tracking." class="w-full h-40 object-cover"/>
-                <div class="p-6">
-                    <p class="text-sm font-semibold text-kora-coral uppercase mb-1">Fertility</p>
-                    <h3 class="text-xl font-bold text-kora-text mb-3">
-                        Mastering BBT: Your Guide to Tracking Basal Body Temperature
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Learn how small temperature shifts unlock big insights into your ovulation window.
-                    </p>
-                    <a href="#" class="text-kora-coral text-sm font-semibold hover:underline">Read Article &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Article Card 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 fade-in-up" style="transition-delay: 100ms;">
-                <img src="https://placehold.co/400x250/fde6ec/ff6b6b?text=Hormone+Phases" alt="A graphic illustrating the four main phases of the menstrual cycle." class="w-full h-40 object-cover"/>
-                <div class="p-6">
-                    <p class="text-sm font-semibold text-kora-coral uppercase mb-1">Cycle Education</p>
-                    <h3 class="text-xl font-bold text-kora-text mb-3">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <?php $page_title = 'Health Library — Kora Cycle'; include 'includes/head.php'; ?>
+            </head>
+            <body class="text-kora-text">
+                <?php include 'includes/nav.php'; ?>
                         The Four Seasons of Your Cycle: Hormones Explained
                     </h3>
                     <p class="text-gray-600 text-sm mb-4">
@@ -162,29 +120,9 @@
         <div class="text-center mt-12 fade-in-up">
             <button class="px-8 py-3 bg-kora-text text-white font-bold text-base rounded-full shadow-lg hover:bg-gray-700 transition duration-300">
                 Load More Articles
-            </button>
-        </div>
-    </section>
-
-    <!-- === FOOTER SECTION (Re-used for consistency) === -->
-    <footer class="bg-kora-pink-deep pt-16 pb-8">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 border-b pb-10 border-gray-300">
-                <!-- Brand Info -->
-                <div class="col-span-2 md:col-span-1">
-                    <h4 class="text-2xl font-extrabold text-kora-coral mb-4">Kora Cycle</h4>
-                    <p class="text-gray-600 text-sm">Empowering women with health insights.</p>
-                </div>
-                
-                <!-- Company Links -->
-                <div>
-                    <h5 class="text-kora-text font-bold mb-4">Company</h5>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-kora-coral">About Us</a></li>
-                        <li><a href="#" class="hover:text-kora-coral">Careers</a></li>
-                        <li><a href="#" class="hover:text-kora-coral">Contact</a></li>
-                    </ul>
-                </div>
+            <?php include 'includes/footer.php'; ?>
+        </body>
+        </html>
 
                 <!-- Legal Links -->
                 <div>

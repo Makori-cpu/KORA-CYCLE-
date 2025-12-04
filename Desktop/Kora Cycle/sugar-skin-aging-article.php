@@ -2,15 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Why Sugar Accelerates Skin Aging — Kora Cycle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Elegant fonts: Merriweather for headings, Poppins for body -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <?php $page_title = 'Why Sugar Accelerates Skin Aging — Kora Cycle'; include 'includes/head.php'; ?>
     <style>
         :root { --content-width: 800px; }
-        body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(180deg,#fff5f8 0%,#fde6ec 100%); color: #333; }
         h1,h2 { font-family: 'Merriweather', serif; }
         .prose { max-width: var(--content-width); }
     </style>
@@ -57,5 +51,6 @@
     </main>
 
     <footer class="text-center py-8 text-sm text-gray-600">&copy; 2025 Kora Cycle</footer>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

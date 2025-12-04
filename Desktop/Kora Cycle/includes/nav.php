@@ -43,15 +43,3 @@
     </div>
 </header>
 
-<!-- Mobile menu toggle script (included with nav to ensure it works on PHP pages) -->
-<script>
-    (function(){
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    })();
-</script>

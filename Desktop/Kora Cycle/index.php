@@ -2,43 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kora Cycle Homepage (Simplified)</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configure Tailwind with Kora Cycle Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // Using a standard system font as a fallback
-                        sans: ['sans-serif'],
-                    },
-                    colors: {
-                        'kora-pink-light': '#fff5f8', // Light background start color
-                        'kora-pink-deep': '#fde6ec',  // Light background end color
-                        'kora-coral': '#ff6b6b',      // Primary CTA pink/coral
-                        'kora-text': '#333333',       // Dark text
-                    },
-                    boxShadow: {
-                        'card': '0 10px 30px -5px rgba(255, 107, 107, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    }
-                },
-            },
-        };
-    </script>
-
-    <!-- Custom Gradient Background -->
-    <style>
-        body {
-            /* Apply the soft pink gradient background */
-            background: linear-gradient(180deg, var(--tw-colors-kora-pink-light) 0%, var(--tw-colors-kora-pink-deep) 100%);
-            min-height: 100vh;
-        }
-    </style>
+    <?php $page_title = 'Kora Cycle — Home'; include 'includes/head.php'; ?>
 </head>
 <body class="text-kora-text">
 
@@ -204,6 +168,8 @@
             </div>
         </div>
     </footer>
+
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 </html>

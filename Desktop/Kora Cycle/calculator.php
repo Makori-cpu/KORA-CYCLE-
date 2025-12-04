@@ -2,46 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kora Cycle Calculator</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Poppins font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Configure Tailwind to use Poppins font and custom colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        'kora-pink-light': '#fff5f8', // Light background start color
-                        'kora-pink-deep': '#fde6ec',  // Light background end color
-                        'kora-coral': '#ff6b6b',      // Primary CTA pink/coral
-                        'kora-text': '#333333',       // Dark text
-                    },
-                    boxShadow: {
-                        'card': '0 10px 30px -5px rgba(255, 107, 107, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    }
-                },
-            },
-        };
-    </script>
-
-    <!-- Custom Gradient and Animation Styles -->
-    <style>
-        body {
-            background: linear-gradient(180deg, var(--tw-colors-kora-pink-light) 0%, var(--tw-colors-kora-pink-deep) 100%);
-            min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-        }
-        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
-    </style>
+    <?php $page_title = 'Calculators — Kora Cycle'; include 'includes/head.php'; ?>
 </head>
 <body class="text-kora-text">
     <?php include 'includes/nav.php'; ?>
@@ -102,30 +63,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('calculator-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const lmpDateStr = document.getElementById('lmp-date').value;
-            const cycleLength = parseInt(document.getElementById('cycle-length').value, 10);
-            const resultsArea = document.getElementById('results-area');
-            const ovulationDisplay = document.getElementById('ovulation-date-display');
-            const fertileWindowDisplay = document.getElementById('fertile-window-display');
-            const errorBox = document.getElementById('error-message');
-            errorBox.classList.add('hidden'); resultsArea.classList.add('hidden');
-            if (!lmpDateStr || isNaN(cycleLength) || cycleLength < 21 || cycleLength > 45) { errorBox.textContent = "Please ensure a valid Last Period date is selected and cycle length is between 21 and 45 days."; errorBox.classList.remove('hidden'); return; }
-            const lmp = new Date(lmpDateStr); lmp.setMinutes(lmp.getMinutes() + lmp.getTimezoneOffset());
-            const daysToOvulation = cycleLength - 14;
-            const ovulationDate = new Date(lmp); ovulationDate.setDate(lmp.getDate() + daysToOvulation);
-            const fertileStart = new Date(ovulationDate); fertileStart.setDate(ovulationDate.getDate() - 5);
-            const options = { month: 'short', day: 'numeric', year: 'numeric' };
-            ovulationDisplay.textContent = ovulationDate.toLocaleDateString('en-US', options);
-            fertileWindowDisplay.textContent = `${fertileStart.toLocaleDateString('en-US', options)} - ${ovulationDate.toLocaleDateString('en-US', options)}`;
-            resultsArea.classList.remove('hidden');
-        });
-
-        const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(element => observer.observe(element));
-    </script>
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 </html>

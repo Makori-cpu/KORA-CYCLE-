@@ -2,56 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Kora Cycle</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Poppins font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Configure Tailwind to use Poppins font and custom colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        'kora-pink-light': '#fff5f8', // Light background start color
-                        'kora-pink-deep': '#fde6ec',  // Light background end color
-                        'kora-coral': '#ff6b6b',      // Primary CTA pink/coral
-                        'kora-text': '#333333',       // Dark text
-                    },
-                    boxShadow: {
-                        'card': '0 10px 30px -5px rgba(255, 107, 107, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    }
-                },
-            },
-        };
-    </script>
-
-    <!-- Custom Gradient and Animation Styles -->
-    <style>
-        /* Apply the soft pink gradient background */
-        body {
-            background: linear-gradient(180deg, var(--tw-colors-kora-pink-light) 0%, var(--tw-colors-kora-pink-deep) 100%);
-            min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Styles for the fade-in animation on scroll */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <?php $page_title = 'About Kora Cycle'; include 'includes/head.php'; ?>
 </head>
 <body class="text-kora-text">
     <?php include 'includes/nav.php'; ?>
@@ -149,31 +100,6 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Toggle (safe: only runs if elements exist) -->
-    <script>
-        (function() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        })();
-    </script>
-
-    <!-- JavaScript for Scroll Animation -->
-    <script>
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(element => observer.observe(element));
-    </script>
-
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
