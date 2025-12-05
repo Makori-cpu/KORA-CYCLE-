@@ -1,4 +1,8 @@
-<?php /* Shared navigation include for Kora Cycle */ ?>
+<?php /* Shared navigation include for Kora Cycle */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header class="sticky top-0 z-50 bg-kora-pink-light/90 backdrop-blur-sm shadow-sm">
     <nav class="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <!-- Logo/Brand Name -->
@@ -14,11 +18,23 @@
             <a href="subscribtions.php" class="hover:text-kora-coral transition duration-200">Manage Subscription</a>
         </div>
 
-        <!-- CTA Button (Desktop) -->
-        <div class="hidden md:block">
-            <a href="#" class="px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full shadow-lg hover:shadow-xl hover:bg-red-500 transition duration-300">
-                Try Kora Cycle Today
-            </a>
+        <!-- Auth Buttons (Desktop) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']): ?>
+                <a href="dashboard.php" class="px-4 py-2 text-kora-coral font-semibold hover:text-red-500 transition duration-200">
+                    Dashboard
+                </a>
+                <a href="dashboard.php?logout=true" class="px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full shadow-lg hover:shadow-xl hover:bg-red-500 transition duration-300">
+                    Logout
+                </a>
+            <?php else: ?>
+                <a href="login.php" class="px-4 py-2 text-kora-coral font-semibold hover:text-red-500 transition duration-200">
+                    Login
+                </a>
+                <a href="signup.php" class="px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full shadow-lg hover:shadow-xl hover:bg-red-500 transition duration-300">
+                    Sign Up
+                </a>
+            <?php endif; ?>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -36,9 +52,19 @@
             <a href="about.php" class="block px-3 py-2 rounded-md text-base font-semibold hover:bg-kora-pink-deep">About</a>
             <a href="forclinicians.php" class="block px-3 py-2 rounded-md text-base font-semibold hover:bg-kora-pink-deep">For Clinicians</a>
             <a href="subscribtions.php" class="block px-3 py-2 rounded-md text-base font-semibold hover:bg-kora-pink-deep">Manage Subscription</a>
-            <a href="#" class="block mx-auto mt-3 px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full hover:bg-red-500 transition duration-300 w-max">
-                Try Kora Cycle Today
-            </a>
+            
+            <!-- Mobile Auth Links -->
+            <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']): ?>
+                <a href="dashboard.php" class="block px-3 py-2 rounded-md text-base font-semibold hover:bg-kora-pink-deep text-kora-coral">Dashboard</a>
+                <a href="dashboard.php?logout=true" class="block mx-auto mt-3 px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full hover:bg-red-500 transition duration-300 w-max">
+                    Logout
+                </a>
+            <?php else: ?>
+                <a href="login.php" class="block px-3 py-2 rounded-md text-base font-semibold hover:bg-kora-pink-deep text-kora-coral">Login</a>
+                <a href="signup.php" class="block mx-auto mt-3 px-6 py-3 bg-kora-coral text-white font-bold text-sm rounded-full hover:bg-red-500 transition duration-300 w-max">
+                    Sign Up
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </header>
