@@ -1,0 +1,65 @@
+# 🌸 Kora Cycle
+
+**Understand your cycle. Understand yourself.**
+
+Kora Cycle is a menstrual cycle tracking and women’s wellness platform designed to help young women better understand the physical and emotional changes that happen throughout their menstrual cycle.
+
+Instead of focusing only on predicting the next period, Kora Cycle aims to help users understand their cycle as a whole — including **flow, symptoms, mood, energy, and feelings**.
+
+## ✨ What Kora Cycle Does
+
+Kora Cycle is designed to provide:
+
+- 🩸 Menstrual cycle tracking
+- 🌸 Cycle phase and "season" education
+- 💭 Symptom and feeling awareness
+- 📚 A women's health library
+- 🧮 Cycle-related calculators
+- 🤖 AI-powered questions and answers
+- 👩‍⚕️ Future connections to clinicians and professional resources
+
+## 🤖 AI Vision
+
+One of the planned features of Kora Cycle is an AI-powered Q&A assistant that allows users to ask questions about their cycle, symptoms, flow, feelings, and general menstrual health.
+
+The goal is to make cycle information easier to understand while helping users learn more about their own patterns.
+
+## 🛠️ Technology
+
+### Current Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Planned Development
+- Node.js
+- MongoDB
+- AI-powered Q&A
+- Backend API
+
+## 🎨 Design
+
+Kora Cycle uses a soft, feminine visual identity built around:
+
+- Pink and coral tones
+- Clean, approachable layouts
+- Poppins typography
+- Simple and accessible user experiences
+
+## 🚀 Project Status
+
+The frontend version of Kora Cycle has been completed and deployed. Future development focuses on transforming the frontend into a full-stack application with persistent user data, backend services, and AI-powered cycle education and Q&A.
+
+## 🎯 Vision
+
+Kora Cycle aims to become more than a period tracker.
+
+It is designed to help women understand the connection between their **cycle, body, emotions, and everyday experiences** — giving them information they can use to better understand themselves.
+
+---
+
+### 👩🏽‍💻 Developer
+
+**Esther Kerubo Makori**
+
+Computer Science Student & Aspiring Full-Stack Developer
